@@ -50,8 +50,20 @@
             margin: 0 0.5em;
         }
 
+        .sections-container {
+            background-image: url('ayodhya22.jpg'); /* Replace 'your-section-image-url.jpg' with the actual URL or path to your section image */
+            background-size: cover;
+            background-position: center 90%;
+            padding: 1em;
+        }
+
         section {
             padding: 1em;
+        }
+
+        section h2,
+        section p {
+            color: #fff; /* Text color for content inside the section */
         }
 
         footer {
@@ -81,18 +93,20 @@
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Gallary</a>
-        <a href="#">Contact</a>
+        <a href="#">Map</a>
     </nav>
 
-    <section>
-        <h2>Main Content</h2>
-        <p>This is the main content of the website. It should adjust its layout based on the screen size.</p>
-    </section>
+    <div class="sections-container">
+        <section>
+            <h2>Main Content</h2>
+            <p>This is the main content of the website. It should adjust its layout based on the screen size.</p>
+        </section>
 
-    <section>
-        <h2>Additional Content</h2>
-        <p>Here is some additional content. It might be a sidebar or another section of the page.</p>
-    </section>
+        <section>
+            <h2>Additional Content</h2>
+            <p>Here is some additional content. It might be a sidebar or another section of the page.</p>
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2024 sudheer debbati</p>
