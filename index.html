@@ -24,19 +24,19 @@
         /* Apply Olive Village Vintage font to the h1 element inside the header */
         header h1 {
             font-family: 'Olive Village Vintage', cursive;
-            margin: 0;
-            font-size: 1.5em;
-            line-height: 1.2;
-            letter-spacing: 1px;
-            color: #fff;
-            display: inline-block;
+            margin: 0; /* Remove default margin for h1 */
+            font-size: 1.5em; /* Adjust font size */
+            line-height: 1.2; /* Adjust line height */
+            letter-spacing: 1px; /* Adjust letter spacing */
+            color: #fff; /* Set text color to transparent to reveal the background image */
+            display: inline-block; /* Make the background cover only the content, not the entire container */
             margin-left: -0.8%;
         }
 
         nav {
             padding: 1em;
             text-align: center;
-            background-image: url('blue.avif');
+            background-image: url('blue.avif'); /* Add your navigation background image URL here */
             background-size: 30%;
             background-position: center;
         }
@@ -46,8 +46,8 @@
             text-decoration: none;
             padding: 0.5em 1em;
             margin: 0 0.5em;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 9px;
+            background: rgba(255, 255, 255, 0.2); /* Glass effect background */
+            border-radius: 9px; /* Rounded corners */
             display: inline-block;
         }
 
@@ -65,15 +65,15 @@
 
         section h2,
         section p {
-            color: #fff;
+            color: #fff; /* Text color for content inside the section */
         }
 
         section h2 {
-            font-size: 1.5em;
+            font-size: 1.5em; /* Adjust the font size of h2 */
         }
 
         section p {
-            font-size: 1em;
+            font-size: 1em; /* Adjust the font size of p */
             color: #fff;
         }
 
@@ -89,8 +89,8 @@
             text-decoration: none;
             margin: 0 1em;
             font-size: 1em;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 9px;
+            background: rgba(255, 255, 255, 0.2); /* Glass effect background */
+            border-radius: 9px; /* Rounded corners */
             display: inline-block;
             padding: 0.5em 1em;
         }
@@ -116,6 +116,28 @@
             font-size: 1.5em;
         }
 
+      .registration-details {
+            display: none;
+            position: fixed;
+            top: 35%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+            z-index: 1;
+            padding: 2em;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        .registration-details-content {
+            color: #fff;
+            border-radius: 10px;
+            padding: 1em;
+            margin-top: 20px; /* Adjust the margin from the top */
+        }
+
         footer {
             background-image: url('blue.avif');
             color: #fff;
@@ -129,7 +151,7 @@
         }
 
         footer p {
-            margin: 0;
+            margin: 0; /* Remove default margin for the paragraph */
         }
 
         /* Center the paragraph horizontally */
@@ -144,23 +166,6 @@
             nav a {
                 display: block;
                 margin: 0.5em 0;
-                background: none;
-                border-radius: 0;
-                padding: 0.5em;
-            }
-
-            .social-links {
-                background-size: cover;
-                text-align: center;
-                padding: 1em;
-            }
-
-            .social-links a {
-                display: block;
-                margin: 0.5em 0;
-                background: none;
-                border-radius: 0;
-                padding: 0.5em;
             }
         }
     </style>
@@ -174,7 +179,7 @@
     </header>
 
     <nav>
-        <a href="#">login</a>
+        <a href="#" onclick="toggleRegistration()">Login</a>
         <a href="#">About</a>
         <a href="#">Gallery</a>
         <a href="#">Map</a>
@@ -188,11 +193,26 @@
             <p>Where there is Hanuma, there will be success</p>
         </section>
     </div>
-    <div class="social-links">
-        <a href="#" target="_blank">Facebook</a>
-        <a href="#" target="_blank">Twitter</a>
-        <a href="#" target="_blank">Instagram</a>
+
+    <div class="registration-details" id="registrationDetails">
+        <div class="registration-details-content">
+            <h2>Login Details</h2>
+            <p>Username: your_username</p>
+            <p>Password: your_password</p>
+        </div>
     </div>
+
+    <div class="social-links">
+
+        <a href="mailto:debbatisudheerpatel@gmail.com" target="_blank"><img src="gmaillogo.png" alt="Gmail Logo" width="30" height="30"></a>
+        <a href="https://www.linkedin.com/in/sudheer-debbati-50a014235" target="_blank"><img src="linkedinlogo.png" alt="LinkedIn Logo" width="30" height="30"></a>
+        <a href="https://github.com/Debbatisudheer" target="_blank"><img src="gitlogo.png" alt="GitHub Logo" width="30" height="30"></a>
+        <a href="https://www.snapchat.com/add/your-snapchat-username" target="_blank"><img src="snaplogo.jpeg" alt="Snapchat Logo" width="30" height="30"></a>
+        <a href="https://codepen.io/Sudheer-Debbati" target="_blank"><img src="codepenlogo.png" alt="CodePen Logo" width="30" height="30"></a>
+        <a href="https://www.instagram.com/suddhu__patel?igshid=YzAwZjE1ZTI0Zg==" target="_blank"><img src="instagramlogo.png" alt="Instagram Logo" width="30" height="30"></a>
+   
+    </div>
+
     <div class="ramayanam-details">
         <h2>seventh avatar of Lord Vishnu </h2>
         <p>celebrated for his unwavering adherence to dharma and his role in the epic Ramayana.</p>
@@ -202,6 +222,18 @@
         <p>&copy; 2024 sudheer debbati</p>
     </footer>
 
+    <script>
+        function toggleRegistration() {
+            var registrationDetails = document.getElementById("registrationDetails");
+            if (registrationDetails.style.display === "none") {
+                registrationDetails.style.display = "block";
+            } else {
+                registrationDetails.style.display = "none";
+            }
+        }
+    </script>
+
 </body>
 
 </html>
+
